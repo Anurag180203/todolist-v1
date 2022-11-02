@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Remembering list</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+
+     <% if(kindofday==="sat"|| kindofday=="sun"){ %>
+    <h1 style="color:red">Yay! It is a <%=kindofday%> List</h1>
+    <% } else{ %>
+    <h1 style="color:blue">Yay! It is a <%=kindofday%> toDoList</h1>
+    <% } %>
+
+    <div class="box" id="heading">
+         <h1><%=kindofday%></h1> 
+
+    </div>
+
+    <div class="box">
+        <% newListItem.forEach(x=>{%>
+        <div class="item">
+            <input type="checkbox" name="" value="">
+
+            <p> <%=x%></p>
+
+
+        </div>
+        <% }) %>
+        <form class="item" action="/" method="post">
+            <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
+            <button type="submit" name="button">+</button>
+        </form>
+    </div>
+
+
+</body>
+
+</html>
